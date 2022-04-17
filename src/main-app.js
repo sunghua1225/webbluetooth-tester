@@ -222,6 +222,7 @@ export class MainApp extends LitElement {
   async _scan() {
     try {
       const device = await navigator.bluetooth.requestDevice({
+        acceptAllDevices: true,
         filters: [{ services: ['ef680100-9b35-4933-9b10-52ffa9740042'] }],
         optionalServices: [
           "ef680200-9b35-4933-9b10-52ffa9740042",
